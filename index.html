@@ -1,39 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamAce</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#02051f;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:fixed;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#1d4ed8 0%,transparent 25%),
+radial-gradient(circle,#9333ea 0%,transparent 25%);
+animation:moveBg 20s linear infinite;
+opacity:.25;
+z-index:-1;
+}
+
+@keyframes moveBg{
+0%{transform:translate(-20%,-20%) rotate(0deg);}
+100%{transform:translate(-20%,-20%) rotate(360deg);}
+}
+
+/* Hero */
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 22px;
+border:1px solid #00ff88;
+border-radius:30px;
+color:#00ff88;
+box-shadow:0 0 15px #00ff88;
+margin-bottom:25px;
+}
+
+.logo{
+font-size:4rem;
+font-weight:800;
+text-shadow:
+0 0 10px #00bfff,
+0 0 30px #00bfff;
+}
+
+.logo span{
+color:#38bdf8;
+}
+
+.subtitle{
+font-size:1.5rem;
+margin-top:15px;
+color:#e5e7eb;
+}
+
+.info{
+margin:25px auto;
+max-width:600px;
+padding:14px;
+border:1px solid #9333ea;
+border-radius:30px;
+box-shadow:0 0 20px rgba(147,51,234,.6);
+}
+
+.buttons{
+margin-top:35px;
+}
+
+.btn{
+display:block;
+width:90%;
+max-width:350px;
+margin:15px auto;
+padding:18px;
+border-radius:20px;
+text-decoration:none;
+font-weight:700;
+font-size:1.2rem;
+color:white;
+transition:.3s;
+}
+
+.btn-blue{
+border:2px solid #00bfff;
+box-shadow:0 0 20px #00bfff;
+}
+
+.btn-pink{
+border:2px solid #ff00ff;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* Cards */
+
+.cards{
+padding:20px;
+display:grid;
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:25px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,191,255,.15);
+}
+
+.card h2{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+/* Stats */
+
+.stats{
+padding:20px;
+}
+
+.stats-box{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.15);
+border-radius:20px;
+padding:20px;
+text-align:center;
+}
+
+.stat h3{
+font-size:2rem;
+color:#38bdf8;
+}
+
+/* Bottom Nav */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#081028;
+display:flex;
+justify-content:space-around;
+padding:15px 0;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.bottom-nav a{
+color:white;
+text-decoration:none;
+font-size:.9rem;
+text-align:center;
+}
+
+/* Floating Rocket */
+
+.rocket{
+display:inline-block;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+</style>
+</head>
+
+<body>
+
 <section class="hero">
-    <div class="stars"></div>
 
-    <div class="badge">⚡ 100% FREE</div>
+<div class="badge">⚡ 100% FREE</div>
 
-    <h1>🚀 Exam<span>Ace</span></h1>
+<h1 class="logo">
+<span class="rocket">🚀</span>
+Exam<span>Ace</span>
+</h1>
 
-    <p>Ace Your <span>JEE & NEET</span> Preparation</p>
+<p class="subtitle">
+Ace Your JEE & NEET Preparation
+</p>
 
-    <div class="info">
-        ⚡ No Sign Up Required • Start Learning Instantly
-    </div>
+<div class="info">
+⚡ No Sign Up Required • Start Learning Instantly
+</div>
 
-    <div class="buttons">
-        <a href="#" class="btn blue">📖 Start JEE Test →</a>
-        <a href="#" class="btn pink">🧬 Start NEET Test →</a>
-    </div>
+<div class="buttons">
+<a href="#" class="btn btn-blue">
+📖 Start JEE Test →
+</a>
+
+<a href="#" class="btn btn-pink">
+🧬 Start NEET Test →
+</a>
+</div>
+
 </section>
-<div class="feature-grid">
 
-<div class="feature">
+<section class="cards">
+
+<div class="card">
 <h2>📚</h2>
 <h3>Mock Tests</h3>
 <p>Practice real exam-level questions.</p>
 </div>
 
-<div class="feature">
+<div class="card">
 <h2>📊</h2>
 <h3>Analysis</h3>
-<p>Track your performance.</p>
+<p>Track your performance and mistakes.</p>
 </div>
 
-<div class="feature">
+<div class="card">
 <h2>🎯</h2>
 <h3>Accuracy</h3>
-<p>Improve weak subjects.</p>
+<p>Improve weak subjects with detailed reviews.</p>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-box">
+
+<div class="stat">
+<h3>500+</h3>
+<p>Questions</p>
+</div>
+
+<div class="stat">
+<h3>4</h3>
+<p>Subjects</p>
+</div>
+
+<div class="stat">
+<h3>10K+</h3>
+<p>Students</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Free</p>
 </div>
 
 </div>
+
+</section>
+
+<div style="height:100px"></div>
+
+<nav class="bottom-nav">
+<a href="#">🏠<br>Home</a>
+<a href="#">📝<br>Tests</a>
+<a href="#">📊<br>Results</a>
+<a href="#">👤<br>Profile</a>
+</nav>
+
+</body>
+</html>
