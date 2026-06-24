@@ -89,3 +89,15 @@ body{
 .hero{
     animation:glow 12s linear infinite;
 }
+.feature-grid{
+    padding:20px;
+}
+
+.feature{
+    background:#071133;
+    border:1px solid #2563eb;
+    border-radius:20px;
+    padding:25px;
+    margin:20px 0;
+    box-shadow:0 0 20px rgba(0,153,255,.4);
+}
