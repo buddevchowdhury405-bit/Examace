@@ -172,7 +172,7 @@ font-weight:bold;
 <div id="feedback-q10"></div>
 </div>
 
-<button type="button" class="submit-btn" onclick="checkScore()">
+<button type="button" id="submitBtn" class="submit-btn" onclick="checkScore()">
 Submit Test
 </button>
 
@@ -293,6 +293,18 @@ document.getElementById("result").innerHTML=`
 document.querySelectorAll('input[type="radio"]').forEach(radio=>{
 radio.disabled=true;
 });
+  // Lock all answers
+document.querySelectorAll('input[type="radio"]').forEach(radio=>{
+radio.disabled = true;
+});
+
+// Change Submit button to Retest button
+const btn = document.getElementById("submitBtn");
+
+btn.innerHTML = "🔄 Retest";
+btn.onclick = function(){
+location.reload();
+};
 }
 
 </script>
