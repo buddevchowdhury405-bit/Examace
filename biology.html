@@ -175,96 +175,110 @@ Submit Test
 function checkScore(){
 
 let answers={
-q1:{correct:"b",text:"Mitochondria"},
-q2:{correct:"c",text:"Nephron"},
-q3:{correct:"a",text:"Nucleus"},
-q4:{correct:"c",text:"Vitamin D"},
-q5:{correct:"a",text:"Cell"},
-q6:{correct:"b",text:"Chloroplast"},
-q7:{correct:"c",text:"4 Chambers"},
-q8:{correct:"b",text:"DNA"},
-q9:{correct:"c",text:"Landsteiner"},
-q10:{correct:"b",text:"Mendel"}
+q1:"b",
+q2:"c",
+q3:"a",
+q4:"c",
+q5:"a",
+q6:"b",
+q7:"c",
+q8:"b",
+q9:"c",
+q10:"b"
+};
+
+let correctText={
+q1:"Mitochondria",
+q2:"Nephron",
+q3:"Nucleus",
+q4:"Vitamin D",
+q5:"Cell",
+q6:"Chloroplast",
+q7:"4 Chambers",
+q8:"DNA",
+q9:"Landsteiner",
+q10:"Mendel"
 };
 
 let score=0;
-let report="";
+let correct=0;
+let wrong=0;
+let notAttempted=0;
 
 for(let q in answers){
 
 let selected=document.querySelector(`input[name="${q}"]:checked`);
+let feedback=document.getElementById(`feedback-${q}`);
 
 if(selected){
 
-if(selected.value===answers[q].correct){
+if(selected.value===answers[q]){
+
+correct++;
 score++;
+
+feedback.innerHTML=`
+<div style="
+margin-top:10px;
+padding:10px;
+border-radius:10px;
+background:#064e3b;
+border:2px solid #22c55e;
+">
+✅ Correct Answer
+</div>`;
 }
 else{
 
-report+=`
+wrong++;
+
+feedback.innerHTML=`
 <div style="
-background:#2d0b0b;
+margin-top:10px;
+padding:10px;
+border-radius:10px;
+background:#450a0a;
 border:2px solid red;
-padding:15px;
-margin:10px 0;
-border-radius:12px;
 ">
-❌ <b>${q.toUpperCase()}</b><br>
-Your Answer: ${selected.nextSibling.textContent}<br>
-✅ Correct Answer: ${answers[q].text}
-</div>
-`;
-
+❌ Wrong Answer<br>
+✅ Correct Answer: ${correctText[q]}
+</div>`;
 }
+}
+else{
 
-}else{
+notAttempted++;
 
-report+=`
+feedback.innerHTML=`
 <div style="
-background:#332400;
+margin-top:10px;
+padding:10px;
+border-radius:10px;
+background:#78350f;
 border:2px solid orange;
-padding:15px;
-margin:10px 0;
-border-radius:12px;
 ">
-⚠️ <b>${q.toUpperCase()}</b><br>
-Not Attempted<br>
-✅ Correct Answer: ${answers[q].text}
-</div>
-`;
-
+⚠️ Not Attempted<br>
+✅ Correct Answer: ${correctText[q]}
+</div>`;
+}
 }
 
-}
-
-let percent=(score/10)*100;
+let percentage=(score/10)*100;
 
 document.getElementById("result").innerHTML=`
+<h2>🎯 Score: ${score}/10</h2>
 
-<div style="
-background:#07143f;
-padding:20px;
-border-radius:15px;
-border:2px solid #00d4ff;
-box-shadow:0 0 15px #00d4ff;
-">
+<p>✅ Correct: ${correct}</p>
 
-<h2>🎯 Result</h2>
+<p>❌ Wrong: ${wrong}</p>
 
-<p><b>Score:</b> ${score}/10</p>
+<p>⚠️ Not Attempted: ${notAttempted}</p>
 
-<p><b>Percentage:</b> ${percent}%</p>
-
-</div>
-
-<h2 style="margin-top:20px;">📊 Wrong Answer Analysis</h2>
-
-${report}
-
+<p>📊 Percentage: ${percentage}%</p>
 `;
 
 }
-let message="";
+let message={
 
 if(percent>=90){
 message="🏆 Excellent! NEET Topper Level";
