@@ -101,3 +101,150 @@ body{
     margin:20px 0;
     box-shadow:0 0 20px rgba(0,153,255,.4);
 }
+
+/* Floating Exam Words */
+
+.floating-words{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.floating-words span{
+position:absolute;
+font-size:22px;
+font-weight:700;
+opacity:.18;
+text-shadow:0 0 15px currentColor;
+animation:floatWords linear infinite;
+}
+
+/* Different positions */
+
+.floating-words span:nth-child(1){
+left:5%;
+top:10%;
+color:#00bfff;
+animation-duration:18s;
+}
+
+.floating-words span:nth-child(2){
+left:80%;
+top:20%;
+color:#ff00ff;
+animation-duration:22s;
+}
+
+.floating-words span:nth-child(3){
+left:10%;
+top:35%;
+color:#00ff88;
+animation-duration:20s;
+}
+
+.floating-words span:nth-child(4){
+left:75%;
+top:45%;
+color:#38bdf8;
+animation-duration:25s;
+}
+
+.floating-words span:nth-child(5){
+left:15%;
+top:60%;
+color:#ff66ff;
+animation-duration:17s;
+}
+
+.floating-words span:nth-child(6){
+left:70%;
+top:70%;
+color:#ffd700;
+animation-duration:24s;
+}
+
+.floating-words span:nth-child(7){
+left:30%;
+top:15%;
+color:#00ff88;
+animation-duration:19s;
+}
+
+.floating-words span:nth-child(8){
+left:55%;
+top:30%;
+color:#00bfff;
+animation-duration:21s;
+}
+
+.floating-words span:nth-child(9){
+left:20%;
+top:80%;
+color:#38bdf8;
+animation-duration:23s;
+}
+
+.floating-words span:nth-child(10){
+left:80%;
+top:85%;
+color:#ffd700;
+animation-duration:26s;
+}
+
+.floating-words span:nth-child(11){
+left:45%;
+top:65%;
+color:#ff00ff;
+animation-duration:18s;
+}
+
+.floating-words span:nth-child(12){
+left:60%;
+top:10%;
+color:#00ff88;
+animation-duration:20s;
+}
+
+.floating-words span:nth-child(13){
+left:8%;
+top:50%;
+color:#38bdf8;
+animation-duration:24s;
+}
+
+.floating-words span:nth-child(14){
+left:85%;
+top:55%;
+color:#ff66ff;
+animation-duration:19s;
+}
+
+.floating-words span:nth-child(15){
+left:35%;
+top:90%;
+color:#00bfff;
+animation-duration:22s;
+}
+
+@keyframes floatWords{
+0%{
+transform:translateY(0px) translateX(0px);
+}
+25%{
+transform:translateY(-30px) translateX(20px);
+}
+50%{
+transform:translateY(20px) translateX(-20px);
+}
+75%{
+transform:translateY(-15px) translateX(30px);
+}
+100%{
+transform:translateY(0px) translateX(0px);
+}
+}
