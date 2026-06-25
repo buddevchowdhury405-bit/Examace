@@ -82,7 +82,7 @@ font-weight:bold;
 
 <form id="quiz">
 
-<div class="question">
+<div class="question" id="question-q1">
 <h3>1. Powerhouse of the cell is?</h3>
 <label><input type="radio" name="q1" value="a"> Nucleus</label>
 <label><input type="radio" name="q1" value="b"> Mitochondria</label>
@@ -91,7 +91,7 @@ font-weight:bold;
 <div id="feedback-q1"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q2">
 <h3>2. Functional unit of kidney?</h3>
 <label><input type="radio" name="q2" value="a"> Neuron</label>
 <label><input type="radio" name="q2" value="b"> Alveoli</label>
@@ -100,7 +100,7 @@ font-weight:bold;
 <div id="feedback-q2"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q3">
 <h3>3. DNA is present in?</h3>
 <label><input type="radio" name="q3" value="a"> Nucleus</label>
 <label><input type="radio" name="q3" value="b"> Cytoplasm</label>
@@ -109,7 +109,7 @@ font-weight:bold;
 <div id="feedback-q3"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q4">
 <h3>4. Which vitamin is produced in skin?</h3>
 <label><input type="radio" name="q4" value="a"> Vitamin A</label>
 <label><input type="radio" name="q4" value="b"> Vitamin C</label>
@@ -118,7 +118,7 @@ font-weight:bold;
 <div id="feedback-q4"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q5">
 <h3>5. Basic unit of life?</h3>
 <label><input type="radio" name="q5" value="a"> Cell</label>
 <label><input type="radio" name="q5" value="b"> Tissue</label>
@@ -127,7 +127,7 @@ font-weight:bold;
 <div id="feedback-q5"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q6">
 <h3>6. Site of photosynthesis?</h3>
 <label><input type="radio" name="q6" value="a"> Mitochondria</label>
 <label><input type="radio" name="q6" value="b"> Chloroplast</label>
@@ -136,7 +136,7 @@ font-weight:bold;
 <div id="feedback-q6"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q7">
 <h3>7. Human heart has?</h3>
 <label><input type="radio" name="q7" value="a"> 2 chambers</label>
 <label><input type="radio" name="q7" value="b"> 3 chambers</label>
@@ -145,7 +145,7 @@ font-weight:bold;
 <div id="feedback-q7"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q8">
 <h3>8. Genetic material of most organisms?</h3>
 <label><input type="radio" name="q8" value="a"> RNA</label>
 <label><input type="radio" name="q8" value="b"> DNA</label>
@@ -154,7 +154,7 @@ font-weight:bold;
 <div id="feedback-q8"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q9">
 <h3>9. Blood group discovered by?</h3>
 <label><input type="radio" name="q9" value="a"> Darwin</label>
 <label><input type="radio" name="q9" value="b"> Mendel</label>
@@ -163,7 +163,7 @@ font-weight:bold;
 <div id="feedback-q9"></div>
 </div>
 
-<div class="question">
+<div class="question" id="question-q10">
 <h3>10. Father of Genetics?</h3>
 <label><input type="radio" name="q10" value="a"> Darwin</label>
 <label><input type="radio" name="q10" value="b"> Mendel</label>
@@ -206,7 +206,8 @@ for(let q in answers){
 
 let selected=document.querySelector(`input[name="${q}"]:checked`);
 let feedback=document.getElementById(`feedback-${q}`);
-
+let questionBox=document.getElementById(`question-${q}`);
+  
 if(!feedback) continue;
 
 if(selected){
@@ -215,7 +216,9 @@ if(selected.value===answers[q][0]){
 
 correct++;
 score++;
-
+questionBox.style.border = "3px solid #22c55e";
+questionBox.style.boxShadow = "0 0 20px #22c55e";
+  
 feedback.innerHTML=`
 <div style="
 margin-top:10px;
@@ -230,6 +233,8 @@ border:2px solid #22c55e;">
 }else{
 
 wrong++;
+questionBox.style.border = "3px solid red";
+questionBox.style.boxShadow = "0 0 20px red";
 
 feedback.innerHTML=`
 <div style="
@@ -248,6 +253,8 @@ border:2px solid red;">
 }else{
 
 notAttempted++;
+questionBox.style.border = "3px solid orange";
+questionBox.style.boxShadow = "0 0 20px orange";
 
 feedback.innerHTML=`
 <div style="
