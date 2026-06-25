@@ -174,30 +174,17 @@ Submit Test
 
 function checkScore(){
 
-let answers={
-q1:"b",
-q2:"c",
-q3:"a",
-q4:"c",
-q5:"a",
-q6:"b",
-q7:"c",
-q8:"b",
-q9:"c",
-q10:"b"
-};
-
-let correctText={
-q1:"Mitochondria",
-q2:"Nephron",
-q3:"Nucleus",
-q4:"Vitamin D",
-q5:"Cell",
-q6:"Chloroplast",
-q7:"4 Chambers",
-q8:"DNA",
-q9:"Landsteiner",
-q10:"Mendel"
+const answers={
+q1:["b","Mitochondria"],
+q2:["c","Nephron"],
+q3:["a","Nucleus"],
+q4:["c","Vitamin D"],
+q5:["a","Cell"],
+q6:["b","Chloroplast"],
+q7:["c","4 Chambers"],
+q8:["b","DNA"],
+q9:["c","Landsteiner"],
+q10:["b","Mendel"]
 };
 
 let score=0;
@@ -210,9 +197,11 @@ for(let q in answers){
 let selected=document.querySelector(`input[name="${q}"]:checked`);
 let feedback=document.getElementById(`feedback-${q}`);
 
+if(!feedback) continue;
+
 if(selected){
 
-if(selected.value===answers[q]){
+if(selected.value===answers[q][0]){
 
 correct++;
 score++;
@@ -223,12 +212,12 @@ margin-top:10px;
 padding:10px;
 border-radius:10px;
 background:#064e3b;
-border:2px solid #22c55e;
-">
+border:2px solid #22c55e;">
 ✅ Correct Answer
-</div>`;
-}
-else{
+</div>
+`;
+
+}else{
 
 wrong++;
 
@@ -238,14 +227,15 @@ margin-top:10px;
 padding:10px;
 border-radius:10px;
 background:#450a0a;
-border:2px solid red;
-">
+border:2px solid red;">
 ❌ Wrong Answer<br>
-✅ Correct Answer: ${correctText[q]}
-</div>`;
+✅ Correct Answer: ${answers[q][1]}
+</div>
+`;
+
 }
-}
-else{
+
+}else{
 
 notAttempted++;
 
@@ -255,15 +245,18 @@ margin-top:10px;
 padding:10px;
 border-radius:10px;
 background:#78350f;
-border:2px solid orange;
-">
+border:2px solid orange;">
 ⚠️ Not Attempted<br>
-✅ Correct Answer: ${correctText[q]}
-</div>`;
+✅ Correct Answer: ${answers[q][1]}
+</div>
+`;
+
 }
+
 }
+
 let percentage=(score/10)*100;
-  
+
 let message="";
 
 if(percentage>=90){
@@ -281,17 +274,13 @@ message="📚 Need More Practice";
 
 document.getElementById("result").innerHTML=`
 <h2>🎯 Score: ${score}/10</h2>
-
 <p>✅ Correct: ${correct}</p>
-
 <p>❌ Wrong: ${wrong}</p>
-
 <p>⚠️ Not Attempted: ${notAttempted}</p>
-
 <p>📊 Percentage: ${percentage}%</p>
-
 <h3>${message}</h3>
 `;
+
 }
 
 </script>
