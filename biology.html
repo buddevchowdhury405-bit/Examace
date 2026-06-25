@@ -1,19 +1,208 @@
-<h2>Question 1</h2>
-<p>Powerhouse of the cell is?</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamAce Biology Test</title>
 
-<input type="radio" name="q1" value="A"> Nucleus<br>
-<input type="radio" name="q1" value="B"> Mitochondria<br>
-<input type="radio" name="q1" value="C"> Ribosome<br>
-<input type="radio" name="q1" value="D"> Golgi Body<br>
-<button onclick="checkScore()">Submit Test</button>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020b2d;
+color:white;
+padding:20px;
+}
+
+.logo{
+text-align:center;
+font-size:3rem;
+font-weight:bold;
+color:#00d4ff;
+text-shadow:0 0 20px #00d4ff;
+margin-bottom:20px;
+}
+
+.subtitle{
+text-align:center;
+font-size:1.2rem;
+margin-bottom:30px;
+color:#ddd;
+}
+
+.question{
+background:#07143f;
+border:2px solid #00d4ff;
+box-shadow:0 0 15px #00d4ff;
+padding:20px;
+margin-bottom:20px;
+border-radius:15px;
+}
+
+.question h3{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+padding:8px;
+}
+
+.submit-btn{
+width:100%;
+padding:18px;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:15px;
+background:#00d4ff;
+color:#000;
+box-shadow:0 0 20px #00d4ff;
+cursor:pointer;
+}
+
+.result{
+margin-top:25px;
+font-size:1.4rem;
+text-align:center;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">🧬 Biology Test</div>
+<div class="subtitle">10 Important NEET Questions</div>
+
+<form id="quiz">
+
+<div class="question">
+<h3>1. Powerhouse of the cell is?</h3>
+<label><input type="radio" name="q1" value="a"> Nucleus</label>
+<label><input type="radio" name="q1" value="b"> Mitochondria</label>
+<label><input type="radio" name="q1" value="c"> Ribosome</label>
+<label><input type="radio" name="q1" value="d"> Golgi Body</label>
+</div>
+
+<div class="question">
+<h3>2. Functional unit of kidney?</h3>
+<label><input type="radio" name="q2" value="a"> Neuron</label>
+<label><input type="radio" name="q2" value="b"> Alveoli</label>
+<label><input type="radio" name="q2" value="c"> Nephron</label>
+<label><input type="radio" name="q2" value="d"> Villi</label>
+</div>
+
+<div class="question">
+<h3>3. DNA is present in?</h3>
+<label><input type="radio" name="q3" value="a"> Nucleus</label>
+<label><input type="radio" name="q3" value="b"> Cytoplasm</label>
+<label><input type="radio" name="q3" value="c"> Ribosome</label>
+<label><input type="radio" name="q3" value="d"> Cell Wall</label>
+</div>
+
+<div class="question">
+<h3>4. Which vitamin is produced in skin?</h3>
+<label><input type="radio" name="q4" value="a"> Vitamin A</label>
+<label><input type="radio" name="q4" value="b"> Vitamin C</label>
+<label><input type="radio" name="q4" value="c"> Vitamin D</label>
+<label><input type="radio" name="q4" value="d"> Vitamin K</label>
+</div>
+
+<div class="question">
+<h3>5. Basic unit of life?</h3>
+<label><input type="radio" name="q5" value="a"> Cell</label>
+<label><input type="radio" name="q5" value="b"> Tissue</label>
+<label><input type="radio" name="q5" value="c"> Organ</label>
+<label><input type="radio" name="q5" value="d"> Organism</label>
+</div>
+
+<div class="question">
+<h3>6. Site of photosynthesis?</h3>
+<label><input type="radio" name="q6" value="a"> Mitochondria</label>
+<label><input type="radio" name="q6" value="b"> Chloroplast</label>
+<label><input type="radio" name="q6" value="c"> Nucleus</label>
+<label><input type="radio" name="q6" value="d"> Vacuole</label>
+</div>
+
+<div class="question">
+<h3>7. Human heart has?</h3>
+<label><input type="radio" name="q7" value="a"> 2 chambers</label>
+<label><input type="radio" name="q7" value="b"> 3 chambers</label>
+<label><input type="radio" name="q7" value="c"> 4 chambers</label>
+<label><input type="radio" name="q7" value="d"> 5 chambers</label>
+</div>
+
+<div class="question">
+<h3>8. Genetic material of most organisms?</h3>
+<label><input type="radio" name="q8" value="a"> RNA</label>
+<label><input type="radio" name="q8" value="b"> DNA</label>
+<label><input type="radio" name="q8" value="c"> Protein</label>
+<label><input type="radio" name="q8" value="d"> Enzyme</label>
+</div>
+
+<div class="question">
+<h3>9. Blood group discovered by?</h3>
+<label><input type="radio" name="q9" value="a"> Darwin</label>
+<label><input type="radio" name="q9" value="b"> Mendel</label>
+<label><input type="radio" name="q9" value="c"> Landsteiner</label>
+<label><input type="radio" name="q9" value="d"> Fleming</label>
+</div>
+
+<div class="question">
+<h3>10. Father of Genetics?</h3>
+<label><input type="radio" name="q10" value="a"> Darwin</label>
+<label><input type="radio" name="q10" value="b"> Mendel</label>
+<label><input type="radio" name="q10" value="c"> Watson</label>
+<label><input type="radio" name="q10" value="d"> Lamarck</label>
+</div>
+
+<button type="button" class="submit-btn" onclick="checkScore()">
+Submit Test
+</button>
+
+</form>
+
+<div class="result" id="result"></div>
 
 <script>
+
 function checkScore(){
+
+let answers={
+q1:"b",
+q2:"c",
+q3:"a",
+q4:"c",
+q5:"a",
+q6:"b",
+q7:"c",
+q8:"b",
+q9:"c",
+q10:"b"
+};
+
 let score=0;
 
-if(document.querySelector('input[name="q1"]:checked')?.value==="B")
+for(let q in answers){
+let selected=document.querySelector(`input[name="${q}"]:checked`);
+if(selected && selected.value===answers[q]){
 score++;
+}
+}
 
-alert("Your Score: "+score);
+let percent=(score/10)*100;
+
+document.getElementById("result").innerHTML=
+`✅ Score: ${score}/10 <br><br> 🎯 Percentage: ${percent}%`;
+
 }
 </script>
+
+</body>
+</html>
