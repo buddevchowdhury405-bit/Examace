@@ -262,8 +262,20 @@ border:2px solid orange;
 </div>`;
 }
 }
+let message="";
 
-let percentage=(score/10)*100;
+if(percentage>=90){
+message="🏆 Excellent! NEET Topper Level";
+}
+else if(percentage>=70){
+message="🔥 Very Good Performance";
+}
+else if(percentage>=50){
+message="👍 Good, Keep Practicing";
+}
+else{
+message="📚 Need More Practice";
+}
 
 document.getElementById("result").innerHTML=`
 <h2>🎯 Score: ${score}/10</h2>
@@ -275,21 +287,9 @@ document.getElementById("result").innerHTML=`
 <p>⚠️ Not Attempted: ${notAttempted}</p>
 
 <p>📊 Percentage: ${percentage}%</p>
+
+<h3>${message}</h3>
 `;
+}
 
-}
-let message="";
-
-if(percent>=90){
-message="🏆 Excellent! NEET Topper Level";
-}
-else if(percent>=70){
-message="🔥 Very Good Performance";
-}
-else if(percent>=50){
-message="👍 Good, Keep Practicing";
-}
-else{
-message="📚 Need More Practice";
-}
 </script>
