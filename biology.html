@@ -1,0 +1,19 @@
+<h2>Question 1</h2>
+<p>Powerhouse of the cell is?</p>
+
+<input type="radio" name="q1" value="A"> Nucleus<br>
+<input type="radio" name="q1" value="B"> Mitochondria<br>
+<input type="radio" name="q1" value="C"> Ribosome<br>
+<input type="radio" name="q1" value="D"> Golgi Body<br>
+<button onclick="checkScore()">Submit Test</button>
+
+<script>
+function checkScore(){
+let score=0;
+
+if(document.querySelector('input[name="q1"]:checked')?.value==="B")
+score++;
+
+alert("Your Score: "+score);
+}
+</script>
