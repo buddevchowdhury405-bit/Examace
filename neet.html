@@ -32,52 +32,132 @@ color:white;
 </head>
 
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET Subjects - ExamAce</title>
 
-<h1>🧬 NEET Mock Test</h1>
-
-<div class="question">
-<p>1. Powerhouse of the cell?</p>
-
-<input type="radio" name="q1" value="0"> Ribosome<br><br>
-
-<input type="radio" name="q1" value="1"> Mitochondria<br><br>
-
-<input type="radio" name="q1" value="0"> Nucleus<br><br>
-
-<input type="radio" name="q1" value="0"> Golgi Body
-</div>
-
-<div class="question">
-<p>2. Blood is pumped by which organ?</p>
-
-<input type="radio" name="q2" value="1"> Heart<br><br>
-
-<input type="radio" name="q2" value="0"> Liver<br><br>
-
-<input type="radio" name="q2" value="0"> Kidney<br><br>
-
-<input type="radio" name="q2" value="0"> Lung
-</div>
-
-<button onclick="checkScore()">Submit Test</button>
-
-<h2 id="result"></h2>
-
-<script>
-function checkScore(){
-
-let score=0;
-
-let q1=document.querySelector('input[name="q1"]:checked');
-let q2=document.querySelector('input[name="q2"]:checked');
-
-if(q1) score+=Number(q1.value);
-if(q2) score+=Number(q2.value);
-
-document.getElementById("result").innerHTML=
-"Your Score: "+score+"/2";
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-</script>
+
+body{
+background:#020b2d;
+color:white;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+text-align:center;
+}
+
+h1{
+font-size:3rem;
+margin-top:30px;
+color:#00d4ff;
+text-shadow:0 0 15px #00d4ff;
+}
+
+.subtitle{
+margin:15px 0 40px;
+font-size:1.1rem;
+color:#ddd;
+}
+
+.subject-btn{
+display:block;
+width:100%;
+padding:22px;
+margin:20px 0;
+font-size:1.3rem;
+font-weight:bold;
+text-decoration:none;
+color:white;
+border-radius:20px;
+transition:0.3s;
+}
+
+.bio{
+border:3px solid #00ff88;
+box-shadow:0 0 20px #00ff88;
+}
+
+.physics{
+border:3px solid #00d4ff;
+box-shadow:0 0 20px #00d4ff;
+}
+
+.chemistry{
+border:3px solid #ff00ff;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.mock{
+border:3px solid #ffd700;
+box-shadow:0 0 20px #ffd700;
+}
+
+.subject-btn:hover{
+transform:scale(1.05);
+}
+
+.back-btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 25px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:10px;
+border:2px solid #00d4ff;
+box-shadow:0 0 10px #00d4ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧬 NEET</h1>
+
+<p class="subtitle">
+Choose Your Subject Test
+</p>
+
+<a href="biology.html" class="subject-btn bio">
+🧬 Biology Test
+</a>
+
+<a href="physics.html" class="subject-btn physics">
+⚛️ Physics Test
+</a>
+
+<a href="chemistry.html" class="subject-btn chemistry">
+🧪 Chemistry Test
+</a>
+
+<a href="neet-mock.html" class="subject-btn mock">
+📚 Full Mock Test
+</a>
+
+<a href="index.html" class="back-btn">
+⬅ Back Home
+</a>
+
+</div>
+
+</body>
+</html>
 
 </body>
 </html>
