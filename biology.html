@@ -290,7 +290,9 @@ document.getElementById("result").innerHTML=`
 <p>📊 Percentage: ${percentage}%</p>
 <h3>${message}</h3>
 `;
-
+document.querySelectorAll('input[type="radio"]').forEach(radio=>{
+radio.disabled=true;
+});
 }
 
 </script>
