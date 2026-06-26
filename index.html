@@ -114,6 +114,17 @@ border:2px solid #ff00ff;
 box-shadow:0 0 20px #ff00ff;
 }
 
+.btn-history{
+border:2px solid #ffd700;
+box-shadow:0 0 20px #ffd700;
+color:#fff;
+}
+
+.btn-history:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #ffd700;
+}
+  
 .btn:hover{
 transform:translateY(-5px);
 }
@@ -164,27 +175,6 @@ text-align:center;
 .stat h3{
 font-size:2rem;
 color:#38bdf8;
-}
-
-/* Bottom Nav */
-
-.bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#081028;
-display:flex;
-justify-content:space-around;
-padding:15px 0;
-border-top:1px solid rgba(255,255,255,.1);
-}
-
-.bottom-nav a{
-color:white;
-text-decoration:none;
-font-size:.9rem;
-text-align:center;
 }
 
 /* Floating Rocket */
@@ -277,6 +267,7 @@ Ace Your JEE & NEET Preparation
 </div>
 
 <div class="buttons">
+
 <a href="jee.html" class="btn btn-blue">
 📖 Start JEE Test →
 </a>
@@ -284,6 +275,11 @@ Ace Your JEE & NEET Preparation
 <a href="neet.html" class="btn btn-pink">
 🧬 Start NEET Test →
 </a>
+
+<a href="history.html" class="btn btn-history">
+📜 Test History →
+</a>
+
 </div>
 
 </section>
@@ -339,13 +335,6 @@ Ace Your JEE & NEET Preparation
 </section>
 
 <div style="height:100px"></div>
-
-<nav class="bottom-nav">
-<a href="#">🏠<br>Home</a>
-<a href="#">📝<br>Tests</a>
-<a href="#">📊<br>Results</a>
-<a href="#">👤<br>Profile</a>
-</nav>
 
 </body>
 </html>
