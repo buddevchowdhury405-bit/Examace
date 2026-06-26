@@ -3,26 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JEE Subjects - ExamAce</title>
+
+<title>ExamAce - JEE</title>
 
 <style>
-/* all your CSS here */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020b2d;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+overflow:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#00d4ff22 0%,transparent 25%),
+radial-gradient(circle,#ff00ff22 0%,transparent 25%);
+animation:bgMove 20s linear infinite;
+z-index:-2;
+}
+
+@keyframes bgMove{
+0%{
+transform:translate(-20%,-20%) rotate(0deg);
+}
+100%{
+transform:translate(-20%,-20%) rotate(360deg);
+}
+}
+
+.container{
+width:100%;
+max-width:500px;
+text-align:center;
+}
+
+.logo{
+font-size:3.2rem;
+font-weight:bold;
+color:#00d4ff;
+text-shadow:0 0 20px #00d4ff;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:1.2rem;
+color:#ddd;
+margin-bottom:40px;
+}
+
+.subject-btn{
+display:block;
+width:100%;
+padding:22px;
+margin:18px 0;
+font-size:1.3rem;
+font-weight:bold;
+text-decoration:none;
+color:white;
+border-radius:20px;
+transition:.3s;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+}
+
+.math{
+border:3px solid #00ff88;
+box-shadow:0 0 20px #00ff88;
+}
+
+.physics{
+border:3px solid #00d4ff;
+box-shadow:0 0 20px #00d4ff;
+}
+
+.chemistry{
+border:3px solid #ff00ff;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.mock{
+border:3px solid #ffd700;
+box-shadow:0 0 20px #ffd700;
+}
+
+.subject-btn:hover{
+transform:translateY(-5px) scale(1.02);
+}
+
+.back-btn{
+display:block;
+margin-top:30px;
+padding:18px;
+border-radius:18px;
+text-decoration:none;
+font-size:1.1rem;
+font-weight:bold;
+color:white;
+border:2px solid #00d4ff;
+box-shadow:0 0 15px #00d4ff;
+background:rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:scale(1.03);
+}
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>📖 JEE</h1>
+<div class="logo">📖 JEE</div>
 
-<p class="subtitle">
+<div class="subtitle">
 Choose Your Subject Test
-</p>
+</div>
 
 <a href="math.html" class="subject-btn math">
-📐 Math Test
+📐 Mathematics Test
 </a>
 
 <a href="physics.html" class="subject-btn physics">
@@ -34,7 +151,7 @@ Choose Your Subject Test
 </a>
 
 <a href="jee-mock.html" class="subject-btn mock">
-📚 Full Mock Test
+🏆 Full JEE Mock Test
 </a>
 
 <a href="index.html" class="back-btn">
