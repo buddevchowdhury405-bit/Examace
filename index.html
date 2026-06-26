@@ -232,7 +232,61 @@ animation:floatWords linear infinite;
 75%{transform:translate(30px,-15px);}
 100%{transform:translate(0,0);}
 }
+/* Footer */
 
+.footer{
+margin-top:60px;
+padding:35px 20px;
+text-align:center;
+color:#d1d5db;
+border-top:1px solid rgba(255,255,255,.12);
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(10px);
+}
+
+.footer p{
+font-size:1rem;
+line-height:1.8;
+}
+
+.brand{
+color:#38bdf8;
+font-weight:bold;
+text-shadow:0 0 10px #38bdf8;
+}
+
+/* Beating Heart */
+
+.heart{
+display:inline-block;
+color:#ff4d6d;
+font-size:1.2em;
+margin-left:5px;
+transform-origin:center;
+animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+0%{
+transform:scale(1);
+}
+15%{
+transform:scale(1.35);
+}
+30%{
+transform:scale(1);
+}
+45%{
+transform:scale(1.35);
+}
+60%{
+transform:scale(1);
+}
+100%{
+transform:scale(1);
+}
+}
+  
 </style>
 </head>
 
@@ -334,7 +388,17 @@ Ace Your JEE & NEET Preparation
 
 </section>
 
-<div style="height:100px"></div>
+<footer class="footer">
 
+<p>We wish you grow more and more</p>
+
+<p>
+With love from
+<span class="brand">ExamAce</span>
+<span class="heart">♥</span>
+</p>
+
+</footer>
+  
 </body>
 </html>
