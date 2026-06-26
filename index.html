@@ -286,6 +286,29 @@ transform:scale(1);
 transform:scale(1);
 }
 }
+
+/* Ripple Effect */
+
+.btn{
+position:relative;
+overflow:hidden;
+}
+
+.ripple{
+position:absolute;
+border-radius:50%;
+transform:scale(0);
+background:rgba(255,255,255,0.6);
+animation:rippleEffect 0.7s linear;
+pointer-events:none;
+}
+
+@keyframes rippleEffect{
+to{
+transform:scale(4);
+opacity:0;
+}
+} 
   
 </style>
 </head>
@@ -399,6 +422,40 @@ With love from
 </p>
 
 </footer>
+
+<script>
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+
+button.addEventListener("click", function(e){
+
+const ripple = document.createElement("span");
+
+const rect = button.getBoundingClientRect();
+
+const size = Math.max(rect.width, rect.height);
+
+ripple.classList.add("ripple");
+
+ripple.style.width = size + "px";
+ripple.style.height = size + "px";
+
+ripple.style.left = (e.clientX - rect.left - size/2) + "px";
+ripple.style.top = (e.clientY - rect.top - size/2) + "px";
+
+button.appendChild(ripple);
+
+setTimeout(()=>{
+ripple.remove();
+},700);
+
+});
+
+});
+
+</script>
   
 </body>
 </html>
