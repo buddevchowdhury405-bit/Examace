@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE Subjects - ExamAce</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020b2d;
+color:white;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+text-align:center;
+}
+
+h1{
+font-size:3rem;
+margin-top:30px;
+color:#00d4ff;
+text-shadow:0 0 15px #00d4ff;
+}
+
+.subtitle{
+margin:15px 0 40px;
+font-size:1.1rem;
+color:#ddd;
+}
+
+.subject-btn{
+display:block;
+width:100%;
+padding:22px;
+margin:20px 0;
+font-size:1.3rem;
+font-weight:bold;
+text-decoration:none;
+color:white;
+border-radius:20px;
+transition:0.3s;
+}
+
+.math{
+border:3px solid #00ff88;
+box-shadow:0 0 20px #00ff88;
+}
+
+.physics{
+border:3px solid #00d4ff;
+box-shadow:0 0 20px #00d4ff;
+}
+
+.chemistry{
+border:3px solid #ff00ff;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.mock{
+border:3px solid #ffd700;
+box-shadow:0 0 20px #ffd700;
+}
+
+.subject-btn:hover{
+transform:scale(1.05);
+}
+
+.back-btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 25px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:10px;
+border:2px solid #00d4ff;
+box-shadow:0 0 10px #00d4ff;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>📖 JEE</h1>
+
+<p class="subtitle">
+Choose Your Subject Test
+</p>
+
+<a href="math.html" class="subject-btn math">
+📐 Mathematics Test
+</a>
+
+<a href="physics.html" class="subject-btn physics">
+⚛️ Physics Test
+</a>
+
+<a href="chemistry.html" class="subject-btn chemistry">
+🧪 Chemistry Test
+</a>
+
+<a href="jee-mock.html" class="subject-btn mock">
+📚 Full Mock Test
+</a>
+
+<a href="index.html" class="back-btn">
+⬅ Back Home
+</a>
+
+</div>
+
+</body>
+</html>
